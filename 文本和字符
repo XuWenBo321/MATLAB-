@@ -1,0 +1,29 @@
+处理文本时，将字符序列括在单引号中。可以将文本赋给变量
+
+> myText = 'Hello, world'
+  文本包含双引号时，定义时使用两个单引号
+  otherText = 'You''re right'
+  #这里的文本，实质上也是数组，数据类型是char
+  
+> whos myText命令，查看变量属性
+
+>连接两个字符串 totalText = [mytext,otherText]
+
+    >> totalText = [myText,otherText]
+
+    totalText =
+
+        '我从远方赶来赴你一面之约'
+> num2str函数，int2str函数 //将数值转化为字符
+      >> c = (f-32);
+      >> tempText = ['Temperature is ',num2str(c),'C'] //使用转化函数
+
+      tempText =
+
+          'Temperature is 39C'
+
+      >> tempText = ['Temperature is ',c,'C'] //不适用转化函数时，非字符串类型被忽略
+
+      tempText =
+
+          'Temperature is 'C'

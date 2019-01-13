@@ -1,0 +1,19 @@
+工作区变量包含在MATLAB中创建或从数据文件或其他程序导入的变量。例
+A = magic(4);
+B = rand(3,5,2);
+
+>whos 查看工作区变量（桌面右侧的工作区也会显示）
+    >> whos
+      Name      Size            Bytes  Class     Attributes
+
+      A         4x4               128  double              
+      a         3x3                72  double              
+      ans       1x1                16  double    complex   
+      b         1x1                 8  double              
+      c         2x2                64  double    complex   
+      d         1x1                 8  double              
+      p         3x3                72  double              
+> save myfile.mat
+  保存当前工作区到myfile.mat文件中，文件名可指定
+>load myfile.mat
+   加载myfile.mat文件中的数据到工作区中

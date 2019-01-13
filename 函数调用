@@ -1,0 +1,4 @@
+MATLAB中含有大量可用于计算的参数，详情请查看：https://ww2.mathworks.cn/help/matlab/referencelist.html?type=function
+
+> max(A)
+> clc //清除命令行窗口

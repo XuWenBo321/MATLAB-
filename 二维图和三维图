@@ -1,4 +1,4 @@
-> 线图-plot函数
+* 二维线图-plot函数
   例-绘制0-2π的正弦函数
   >> x = 0:pi/100:2*pi;
   >> y = sin(x);
@@ -9,3 +9,28 @@
   >> plot(x,y)
   
 >标记轴并添加标题
+  xlabel('x') // 在运行plot后直接添加，不用加分号，运行完一条语句就出现一个标签·
+  ylabel('sin(x)')
+  title('Plot of the Sine Function')
+  
+> plot(x,y,'r--') //图形为红色的虚线
+
+> hold on //将下一条曲线，绘图到与上一条曲线相同的窗口
+          // 结束绘制到同一窗口，使用hold off
+  #legend函数，对两个不同的函数注释
+  
+**三维图一般是由两个变量的函数，Z = f(x,y)定义的曲面图
+
+> meshgrid 函数-用于创建一组(x,y)的点->定义因变量Z->使用surf(X,Y,Z)创建曲面图
+  >> [X,Y] = meshgrid(-2:.2:2);
+  >> Z = X .* exp(-X.^2 - Y.^2);
+  >> surf(X,Y,Z)
+
+> subplot-在同一窗口的不同子区域显示多个绘图
+    t = 0:pi/10:2*pi;
+    [X,Y,Z] = cylinder(4*cos(t));
+    subplot(2,2,1); mesh(X); title('X');
+    subplot(2,2,2); mesh(Y); title('Y');
+    subplot(2,2,3); mesh(Z); title('Z');
+    subplot(2,2,4); mesh(X,Y,Z); title('X,Y,Z');
+ 

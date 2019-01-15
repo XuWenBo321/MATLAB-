@@ -1,0 +1,52 @@
+#脚本是最简单的一种MATLAB程序。后缀为.m 
+
+> 创建脚本 文件->新建脚本
+   编写代码时，最好添加注释（%开头）
+>运行 编辑->运行按钮 或 在命令行输入脚本名字
+
+> 循环和条件语句
+使用关键字for，while，if，switch
+  例：计算5个随机样本的均值和总均值
+  nsamples = 5; %初始换变量
+  npoints = 50;
+
+  for k = 1:nsamples %在1到5之间循环
+      currentData = rand(npoints,1); %生成一个范围为（0,1）50x1的列向量，并赋值给currentData
+      sampleMean(k) = mean(currentData); %将生成的随机数加入到数组中
+  end
+  overallMean = mean(sampleMean) %计算行向量的均值
+  
+  例2.0：显示当前迭代次数
+  nsamples = 5;
+  npoints = 50;
+
+  for k = 1:nsamples
+      %currentData = rand(npoints,1);
+      %sampleMean(k) = mean(currentData);
+
+      iterationString = ['Iteration #',int2str(k)];
+      disp(iterationString) %显示变量iterationString的值，并且不打印变量的名称。另一种方法是在命令行键入变量名
+      currentData = rand(npoints,1);
+      sampleMean(k) = mean(currentData) %mean函数将50 X 1的列向量去平均值，！！之所以能够显示当前的迭代结果，是因为这里去掉了分号
+  end
+  overallMean = mean(sampleMean)
+  
+  %%在MATLAB语句中，那些没有分号的语句，都会被执行一遍。所以上例中，去掉27行的分号和28行语句，可以达到类似效果（无分号当时会多一个等号）
+  
+ -->if语句，注意格式。每一个if都以end结尾
+    if overallMean < .49
+        disp('Mean is less than expected')
+        disp('less')
+    elseif overallMean > .51
+        disp('Mean is greater than excepted')
+        disp('greater')
+    else
+        disp('Mean is within the expected range')
+    end
+    
+ -->脚本位置：脚本文件必须位于当前文件夹中（即MATLAB工具栏中显示的路径），否则，将会出现以下错误
+ >> calcmean
+    在当前文件夹或 MATLAB 路径中未找到 'calcmean'，但它位于:
+     D:\Program Files\新建文件夹\MATLAB
+
+    更改 MATLAB 当前文件夹 或 将其文件夹添加到 MATLAB 路径。
